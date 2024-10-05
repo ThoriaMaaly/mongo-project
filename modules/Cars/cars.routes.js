@@ -1,0 +1,12 @@
+import { Router } from "express";
+import { addCar, availableModels, carByModel, deleteCar, getAllCars, getSpesificCar, RentedOrAvailableSpecific, RentedOrSpecific, updateCar } from "./cars.controllers.js";
+export const carRoutes =Router();
+carRoutes.get("/models",carByModel);
+carRoutes.get("/RentedOrAvailableSpecific",RentedOrAvailableSpecific);
+carRoutes.get("/availableModels",availableModels);
+carRoutes.get("/RentedOrSpecific",RentedOrSpecific);
+carRoutes.get("/:id",getSpesificCar);
+carRoutes.delete("/:id",deleteCar);
+carRoutes.put("/:id",updateCar);
+carRoutes.post("/",addCar);
+carRoutes.get("/",getAllCars);

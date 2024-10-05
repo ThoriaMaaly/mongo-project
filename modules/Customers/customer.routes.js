@@ -1,0 +1,10 @@
+import { Router } from "express";
+import { checkEmail } from "../../middleware/checkEmail.js";
+import { allCustomers, deleteCustomer, getSpesificCustomer, signin, signup, updateCustomer } from "./customer.controllers.js";
+export const customerRoutes=Router();
+customerRoutes.post("/",checkEmail,signup);
+customerRoutes.post("/signin",signin);
+customerRoutes.get("/:id",getSpesificCustomer);
+customerRoutes.put("/:id",updateCustomer);
+customerRoutes.delete("/:id",deleteCustomer);
+customerRoutes.get("/",allCustomers);
